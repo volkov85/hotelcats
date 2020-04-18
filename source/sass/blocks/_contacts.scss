@@ -1,0 +1,145 @@
+.contacts__wrapper {
+  @extend %container-wide;
+  background-color: $colorPrimary;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.contacts__column {
+  @media (min-width: 768px) {
+    width: 48%;
+  }
+
+  @media (min-width: 1280px) {
+    width: 41.6%;
+  }
+}
+
+.contacts__inner {
+  box-sizing: border-box;
+  width: 320px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 34px 15px 28px;
+
+  @media (min-width: 768px) {
+    width: auto;
+    max-width: 369px;
+    padding: 51px 45px 48px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 426px;
+    max-width: none;
+    margin-right: 0;
+    padding: 61px 55px 58px;
+  }
+}
+
+.contacts__title {
+  @extend %title;
+  margin-bottom: 31px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 29px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 39px;
+  }
+}
+
+.contacts__content {
+  font-style: normal;
+}
+
+.contacts__list {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: $lineHeightNormal;
+
+  @media (min-width: 1280px) {
+    line-height: $lineHeightSmall;
+  }
+}
+
+.contacts__list-title {
+  margin-bottom: 9px;
+  font-weight: $fontWeightBold;
+}
+
+.contacts__list-info {
+  margin-bottom: 22px;
+  margin-left: 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  & > a {
+    color: inherit;
+    transition: opacity 0.3s;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 27px;
+  }
+}
+
+.contacts__map {
+  height: 300px;
+
+  .no-js & {
+    background:
+      url("../img/contacts_map-marker.svg") calc(50% - 7px) 99px / 54px no-repeat,
+      url("../img/contacts_map-mobile.jpg") center no-repeat;
+  }
+
+  @media (min-width: 768px) {
+    width: 52%;
+    height: auto;
+
+    .no-js & {
+      background-image:
+        url("../img/contacts_map-marker.svg"),
+        url("../img/contacts_map-tablet.jpg");
+      background-position:
+        calc(50% - 10px) 207px,
+        center;
+      background-size:
+        64px,
+        auto;
+    }
+
+    [class*="placemark"] {
+      [class*="image"] {
+        transform: scale(1.13) !important;
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    width: 58.4%;
+
+    .no-js & {
+      background-image:
+        url("../img/contacts_map-marker.svg"),
+        url("../img/contacts_map-desktop.jpg");
+      background-position:
+        247px 235px,
+        -220px;
+    }
+  }
+}

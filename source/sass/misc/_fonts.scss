@@ -1,0 +1,10 @@
+// Подключаем шрифт Rubik
+@include font-face("Rubik", "Regular");
+@include font-face("Rubik", "Medium", $fontWeightMedium);
+@include font-face("Rubik", "Bold", $fontWeightBold);
+
+// Подключаем шрифт Lato
+@include font-face("Lato", "Regular");
+@include font-face("Lato", "Medium", $fontWeightMedium);
+@include font-face("Lato", "Semibold", $fontWeightSemibold);
+@include font-face("Lato", "Bold", $fontWeightBold);

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Фильтр каталога номеров — Котейка</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/lato-medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/lato-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body class="page page--form">
+    <section class="filter">
+      <h1 class="visually-hidden">Фильтр каталога номеров</h1>
+      <form class="filter__form" action="#" method="get">
+        <fieldset class="filter__fields">
+          <legend class="filter__fields-title">Цена за сутки, <span>₽</span></legend>
+          <div class="filter__price">
+            <div class="filter__price-field">
+              <input class="filter__price-input" id="minprice" type="number" name="minprice" placeholder="100" min="100" max="600" step="1" aria-label="Цена за сутки от">
+              <label class="filter__price-label" for="minprice">от</label>
+            </div>
+            <div class="filter__price-field">
+              <input class="filter__price-input" id="maxprice" type="number" name="maxprice" placeholder="600" min="100" max="600" step="1" aria-label="Цена за сутки до">
+              <label class="filter__price-label" for="maxprice">до</label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="filter__fields">
+          <legend class="filter__fields-title">Площадь</legend>
+          <div class="filter__field">
+            <input class="visually-hidden" id="063" type="checkbox" name="area" value="063" aria-label="Площадь 0,63 м2">
+            <label class="filter__field-label" for="063">0,63 м2</label>
+          </div>
+          <div class="filter__field">
+            <input class="visually-hidden" id="090" type="checkbox" name="area" value="090" aria-label="Площадь 0,90 м2">
+            <label class="filter__field-label" for="090">0,90 м2</label>
+          </div>
+          <div class="filter__field">
+            <input class="visually-hidden" id="113" type="checkbox" name="area" value="113" aria-label="Площадь 1,13 м2">
+            <label class="filter__field-label" for="113">1,13 м2</label>
+          </div>
+          <div class="filter__field">
+            <input class="visually-hidden" id="156" type="checkbox" name="area" value="156" aria-label="Площадь 1,56 м2">
+            <label class="filter__field-label" for="156">1,56 м2</label>
+          </div>
+          <div class="filter__field">
+            <input class="visually-hidden" id="256" type="checkbox" name="area" value="256" aria-label="Площадь 2,56 м2">
+            <label class="filter__field-label" for="256">2,56 м2</label>
+          </div>
+          <div class="filter__field">
+            <input class="visually-hidden" id="288" type="checkbox" name="area" value="288" aria-label="Площадь 2,88 м2">
+            <label class="filter__field-label" for="288">2,88 м2</label>
+          </div>
+        </fieldset>
+        <fieldset class="filter__fields">
+          <legend class="filter__fields-title">Оснащение номера</legend>
+          <div class="filter__field">
+            <input class="visually-hidden" id="empty" type="checkbox" name="equipment" value="empty">
+            <label class="filter__field-label" for="empty">Пустой номер</label>
+          </div>
+          <div class="filter__field">
+            <input class="visually-hidden" id="bed" type="checkbox" name="equipment" value="bed">
+            <label class="filter__field-label" for="bed">Лежак</label>
+          </div>
+          <div class="filter__field">
+            <input class="visually-hidden" id="scratcher" type="checkbox" name="equipment" value="scratcher">
+            <label class="filter__field-label" for="scratcher">Когтеточка</label>
+          </div>
+          <div class="filter__field">
+            <input class="visually-hidden" id="tree" type="checkbox" name="equipment" value="tree">
+            <label class="filter__field-label" for="tree">Игровой-комплекс</label>
+          </div>
+          <div class="filter__field">
+            <input class="visually-hidden" id="house" type="checkbox" name="equipment" value="house">
+            <label class="filter__field-label" for="house">Домик</label>
+          </div>
+        </fieldset>
+        <button class="filter__button" type="submit">Применить</button>
+        <button class="filter__button filter__button--alt" type="reset">Сбросить фильтр</button>
+      </form>
+    </section>
+  </body>
+</html>

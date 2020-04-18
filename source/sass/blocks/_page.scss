@@ -1,0 +1,87 @@
+.page {
+  min-width: 320px;
+  margin: 0;
+  font: #{$fontSizeText}/#{$lineHeightLarge} $fontFamilyText;
+  color: $colorText;
+  background-color: $colorBackground;
+
+  @media (min-width: 1280px) {
+    font-size: $fontSizeTextLarge;
+  }
+}
+
+.page__header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.page__rooms {
+  margin-bottom: 32px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 8px;
+  }
+}
+
+.page__testimonials {
+  margin-bottom: 70px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 120px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 128px;
+  }
+}
+
+.page__catalog {
+  margin-top: 34px;
+  margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    margin-top: 51px;
+    margin-bottom: 90px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: 61px;
+    margin-bottom: 110px;
+  }
+}
+
+.page__offer {
+  margin-bottom: 70px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 120px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 140px;
+  }
+}
+
+.page__room {
+  margin-top: 40px;
+  margin-bottom: 21px;
+
+  @media (min-width: 768px) {
+    margin-top: 51px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.page__related {
+  @extend .page__testimonials;
+}

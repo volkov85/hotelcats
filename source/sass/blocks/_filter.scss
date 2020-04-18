@@ -1,0 +1,298 @@
+.filter {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  z-index: 3;
+  display: none;
+  width: 290px;
+  max-height: 100%;
+  background-color: $colorBackground;
+  border-radius: 6px;
+  box-shadow: 0 4px 25px rgba($colorShadowPopup, 0.25);
+  transform: translate(50%, -50%);
+
+  &--shown {
+    display: flex;
+    animation: 0.5s both modal;
+  }
+
+  .page--form & {
+    position: static;
+    display: block;
+    max-height: none;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+  }
+
+  @media (min-width: 768px) {
+    width: 332px;
+  }
+
+  @media (min-width: 1280px) {
+    position: static;
+    z-index: auto;
+    display: block;
+    width: 210px;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+
+    &--shown {
+      animation: none;
+    }
+  }
+}
+
+.filter__form {
+  padding: 48px 25px 50px;
+  overflow-y: auto;
+  font-size: $fontSizeTextSmall;
+  line-height: $lineHeightTextSmall;
+
+  @media (min-width: 768px) {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 0;
+    overflow: visible;
+
+    .page--form & {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  }
+}
+
+.filter__fields {
+  margin: 0;
+  margin-bottom: 28px;
+  padding: 0;
+  border: none;
+
+  &:last-of-type {
+    margin-bottom: 35px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 33px;
+  }
+}
+
+.filter__fields-title {
+  margin-bottom: 15px;
+  font-weight: $fontWeightMedium;
+  font-size: $fontSizeTextLarge;
+  line-height: $lineHeightSmall;
+
+  span {
+    margin-left: -3px;
+    font-size: $fontSizeTextSmall;
+  }
+}
+
+.filter__price {
+  display: flex;
+  justify-content: space-between;
+  width: 212px;
+
+  @media (min-width: 1280px) {
+    width: auto;
+  }
+}
+
+.filter__price-field {
+  position: relative;
+}
+
+.filter__price-input {
+  box-sizing: border-box;
+  width: 99px;
+  padding: 10px 10px 7px 28px;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 1px solid $colorGray;
+  transition: border-color 0.3s;
+  appearance: textfield;
+
+  &::placeholder {
+    color: $colorTextPlaceholder;
+    opacity: 1;
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: $colorPrimary;
+  }
+
+  @media (min-width: 1280px) {
+    width: 100px;
+    padding: 4px 5px 1px 25px;
+  }
+}
+
+.filter__price-label {
+  position: absolute;
+  top: 11px;
+  left: 8px;
+  color: $colorTextPlaceholder;
+  transition: color 0.3s;
+  user-select: none;
+  pointer-events: none;
+
+  .filter__price-input:focus + &,
+  .filter__price-input:not(:placeholder-shown) + & {
+    color: $colorText;
+  }
+
+  @media (min-width: 1280px) {
+    top: 5px;
+    left: 5px;
+  }
+}
+
+.filter__field {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.filter__field-label {
+  position: relative;
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  padding-left: 34px;
+  cursor: pointer;
+  user-select: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid $colorGray;
+    transition: border-color 0.3s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    width: 12px;
+    height: 8px;
+    background: url("../img/filter_icon-checkbox.svg") center / contain no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    .filter__field input:checked + & {
+      opacity: 1;
+    }
+  }
+
+  &:hover,
+  .filter__field input:focus + & {
+    outline: none;
+
+    &::before {
+      border-color: $colorPrimary;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    padding-top: 3px;
+    padding-bottom: 0;
+    padding-left: 30px;
+
+    &::before {
+      width: 18px;
+      height: 18px;
+    }
+
+    &::after {
+      top: 6px;
+      left: 5px;
+      width: 11px;
+      height: 8px;
+      background-size: 11px 8px;
+    }
+  }
+}
+
+.filter__button {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 185px;
+  min-height: 42px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-weight: $fontWeightSemibold;
+  font-size: $fontSizeTextSmall;
+  line-height: $lineHeightTextSmall;
+  vertical-align: middle;
+  text-align: center;
+  color: inherit;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background-color: $colorPrimary;
+  border: 2px solid $colorPrimary;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+
+  &--alt {
+    background-color: $colorBackground;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: 0 5px 25px rgba($colorText, 0.25);
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    width: auto;
+  }
+}
+
+.filter__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  @media (min-width: 768px) {
+    top: 20px;
+    right: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    display: none;
+  }
+}

@@ -1,0 +1,47 @@
+// Подключаем Normalize
+@import "normalize";
+
+// Подключаем переменные, функции и миксины
+@import "misc/variables", "misc/functions", "misc/mixins";
+
+// Подключаем шрифты
+@import "misc/fonts";
+
+// Подключаем шаблонные и вспомогательные классы
+@import "misc/extends", "blocks/visually-hidden", "blocks/overlay";
+
+// Подключаем анимацию
+@import "misc/animations";
+
+// Подключаем основные стили
+@import "misc/base", "blocks/page", "blocks/button", "blocks/button-close";
+
+// Подключаем стили шапки
+@import "blocks/header", "blocks/logo", "blocks/menu", "blocks/menu-mobile", "blocks/social";
+
+// Подключаем стили hero-блока
+@import "blocks/hero";
+
+// Подключаем стили блока преимуществ
+@import "blocks/features";
+
+// Подключаем стили слайдера номеров и отзывов
+@import "blocks/slider";
+
+// Подключаем стили блока контактов
+@import "blocks/contacts";
+
+// Подключаем стили подвала
+@import "blocks/footer";
+
+// Подключаем стили блоков каталога и фильтра
+@import "blocks/catalog", "blocks/sorting", "blocks/filter", "blocks/room-preview";
+
+// Подключаем стили блока акции
+@import "blocks/offer";
+
+// Подключаем стили блока номера
+@import "blocks/room";
+
+// Подключаем стили всплывающих окон бронирования и подтверждения заявки
+@import "blocks/modal", "blocks/reservation-form";

@@ -1,0 +1,43 @@
+.social {
+  @extend %list-reset;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social__item {
+  margin-right: 18px;
+  margin-bottom: 14px;
+
+  .menu-mobile & {
+    margin-right: 20px;
+  }
+}
+
+.social__link {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: center / contain no-repeat;
+  transition: opacity 0.3s;
+
+  @each $social in fb, ig, vk {
+    &--#{$social} {
+      background-image: url("../img/social_icon-#{$social}.svg");
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  @media (min-width: 1280px) {
+    width: 22px;
+    height: 22px;
+  }
+}

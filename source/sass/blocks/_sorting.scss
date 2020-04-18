@@ -1,0 +1,135 @@
+.sorting {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: $fontSizeTextSmall;
+  line-height: $lineHeightTextSmall;
+  background-color: $colorWhite;
+  border-radius: 25px;
+  box-shadow: 0 2px 12px rgba($colorShadowButton, 0.18);
+  transition-duration: 0.3s;
+  transition-property: border-radius, box-shadow;
+
+  @each $state in hover, focus-within {
+    &:#{$state} {
+      box-shadow: 0 2px 12px rgba($colorShadowButton, 0.5);
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &--opened,
+  .no-js &:hover {
+    border-radius: 4px;
+
+    &:active {
+      box-shadow: 0 2px 12px rgba($colorShadowButton, 0.5);
+    }
+  }
+}
+
+.sorting__options {
+  display: none;
+  overflow: hidden;
+
+  .sorting--opened &,
+  .no-js .sorting:hover & {
+    display: block;
+  }
+
+  .sorting--opened & {
+    animation: 0.5s both sorting;
+  }
+}
+
+.sorting__option {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  min-width: 154px;
+  min-height: 35px;
+  padding: 10px 10px 8px 25px;
+  text-align: left;
+  color: inherit;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 14px;
+    width: 7px;
+    height: 12px;
+    background: url("../img/sorting_icon-arrow.svg") center / contain no-repeat;
+  }
+
+  &--down {
+    &::before {
+      transform: scaleY(-1);
+    }
+  }
+
+  &--toggle {
+    padding-right: 35px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      width: 8px;
+      height: 8px;
+      border: 0 solid currentColor;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      transition: transform 0.3s;
+
+      .sorting--opened &,
+      .no-js .sorting:hover & {
+        top: 16px;
+        transform: rotate(45deg) scale(-1);
+      }
+    }
+  }
+
+  .sorting--opened &,
+  .no-js .sorting:hover & {
+    transition: background-color 0.3s;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($colorPrimary, 0.15);
+    }
+
+    &:active {
+      background-color: rgba($colorPrimary, 0.25);
+    }
+  }
+
+  @media (min-width: 768px) {
+    min-width: 174px;
+    padding-left: 30px;
+
+    &::before {
+      left: 19px;
+    }
+
+    &--toggle {
+      padding-right: 43px;
+
+      &::after {
+        right: 21px;
+      }
+    }
+  }
+}

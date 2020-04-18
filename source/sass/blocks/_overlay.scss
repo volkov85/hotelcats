@@ -1,0 +1,16 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  background-color: $colorBackground;
+  backdrop-filter: blur(8px);
+
+  &--shown {
+    display: block;
+    animation: 0.5s both overlay;
+  }
+}

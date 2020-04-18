@@ -1,0 +1,81 @@
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 206px;
+  max-width: 290px;
+  min-height: 50px;
+  padding: 16px 50px 15px 23px;
+  font-weight: $fontWeightSemibold;
+  font-size: $fontSizeTextLarge;
+  line-height: $lineHeightSmall;
+  vertical-align: middle;
+  text-align: center;
+  color: $colorBackground;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background: url("../img/button_icon.svg") center right 7px / 36px no-repeat $colorSecondary;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 5px 25px rgba($colorText, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+
+  &--inverse {
+    width: auto;
+    padding-left: 16px;
+    color: $colorText;
+    background-color: $colorBackground;
+    background-image: url("../img/button_icon-inverse.svg");
+  }
+
+  &--catalog {
+    min-height: 46px;
+    padding: 15px 50px 14px 24px;
+    font-size: $fontSizeTextSmall;
+    line-height: $lineHeightTextSmall;
+    background-position: center right 6px;
+    background-size: 34px;
+    box-shadow: none;
+  }
+
+  &--small {
+    width: auto;
+    min-width: 122px;
+    padding-top: 17px;
+    padding-bottom: 14px;
+    padding-left: 17px;
+    box-shadow: none;
+  }
+
+  &--wide {
+    min-width: 230px;
+    padding-left: 16px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: 0 5px 25px rgba($colorText, 0.3);
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  @media (min-width: 768px) {
+    width: auto;
+    padding-left: 17px;
+
+    &--catalog {
+      width: 100%;
+      padding-left: 24px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    &--catalog {
+      padding-left: 21px;
+    }
+  }
+}
