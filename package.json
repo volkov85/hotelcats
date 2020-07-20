@@ -6,9 +6,9 @@
     "deploy": "gh-pages -d build -m \"Сделал сборку сайта\"",
     "start": "gulp start"
   },
-  "repository": "github:koshikishi/hotelcats",
+  "repository": "github:volkov85/hotelcats",
   "license": "ISC",
-  "homepage": "https://koshikishi.github.io/hotelcats",
+  "homepage": "https://volkov85.github.io/hotelcats/",
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
